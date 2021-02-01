@@ -14,24 +14,24 @@ export class Counter extends React.Component{
       return(
         <div className="Counter">
           <h1>Counter</h1>
-          <button onClick={this.increment}>Increment</button>
+          <button onClick={this.increment}>Increment by {this.props.by}</button>
           <span>{this.state.counter}</span>       
-          <button onClick={this.decrement}>Decrement</button>
+          <button onClick={this.decrement}>Decrement by {this.props.by}</button>
           <br/>
-          <button onClick={this.reset}>Reset</button>
+          
         </div>
       );
     }
     increment=()=>{                     //can define functions within the class component
      console.log("increment");
      this.setState({
-        counter : this.state.counter+1         //this.state.counter++; ++ not working use +1
+        counter : this.state.counter+this.props.by         //this.state.counter++; ++ not working use +1
     })  ;           // this.state.counter--; this will not work (we need to bind it with class)          
     }
     decrement=()=>{
      console.log("decrement");
       this.setState({
-            counter : this.state.counter-1    //this.state.counter++; -- not working use -1
+            counter : this.state.counter-this.props.by    //this.state.counter++; -- not working use -1
         })  ;       //we need to create an object within the setState to update the state as we cannot change the state directly
 
     }
