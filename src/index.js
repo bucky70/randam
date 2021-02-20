@@ -10,10 +10,13 @@ import { Products } from './propDemo';
 import { PropValidation } from './propValidation';
 import AllDefectsPage from './Defects/AllDefectsPage';
 import AllEmployeesPage from './Employees/AllEmployeesPage'
+import EmployeeListNormal from './Components/HigherOrderComponents/EmployeeListNormal';
+import TodoApp from './TodoApp/Todo';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+   {/* <CounterOneComponent></CounterOneComponent> */}
+   <TodoApp></TodoApp>
   </React.StrictMode>,
   document.getElementById('root')
 );
